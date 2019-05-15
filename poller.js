@@ -78,7 +78,7 @@ var DisplayResponse = function (posturl)
                     response.result.data.forEach(function (elm) {
                         html += '<tr>';
                         html += '<td>' + StringToCamelCase(elm.event_type) + '</td>';
-                        html += '<td>' + elm.payload + '</td>';
+                        html += '<td><pre>' + elm.payload + '</pre></td>';
                         html += '<td>' + elm.reference_type + '</td>';
                         html += '<td>' + elm.date_c + '</td>';
                         html += '</tr>';
