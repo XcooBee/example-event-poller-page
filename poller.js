@@ -91,7 +91,7 @@ var DisplayResponse = function (posturl)
                             url: posturl,
                             type: "POST",
                             dataType: "json",
-                            data: response,
+                            data: response.result,
                             contentType: "application/json"
                         });
                     }
