@@ -2,11 +2,12 @@ var interval;
 $(document).ready(function () {
     $("#xcoobee_demo_form").validate();
     $('#stop_poll').on('click', function () {
-        clearInterval(serverPollInt);
+        clearInterval(interval);
         $('#start_poll').removeClass('btn-default').addClass('btn-primary');
         $('#stop_poll').removeClass('btn-primary').addClass('btn-default');
         $('button').prop('disabled', false);
         $('.xcoobee_clock').html("<p>waiting for poll</p>");
+        $('.xcoobee_loader').hide();
     });
 });
 
@@ -42,7 +43,7 @@ function pollServer(serverPollIntervall, posturl) {
     //do the countdown text
     var count = serverPollIntervall;
 
-    serverPollInt = setInterval(function () {
+    interval = setInterval(function () {
         count = count - 1;
         $('button').prop('disabled', true);
         $('.xcoobee_clock').html("<p>next poll in <span>" + count + "</span> s</p>");
